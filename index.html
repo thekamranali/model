@@ -1,0 +1,680 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Kamran Ali — Portfolio (Luxury Minimal)</title>
+    <meta name="description"
+        content="Kamran Ali — Professional modeling portfolio. Editorial, runway, commercial. Available worldwide." />
+    <link rel="icon" href="./1.png" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=Inter:wght@300;400;600;700&display=swap"
+        rel="stylesheet">
+    <style>
+        /* Reset + Base */
+        :root {
+            --bg: #050507;
+            --card: #0d0f12;
+            --muted: rgba(255, 255, 255, 0.65);
+            --accent: #c6a35a;
+            --accent-2: #6bd3ff;
+            --glass: rgba(255, 255, 255, 0.03);
+            --radius: 14px;
+            --maxw: 1200px;
+            --ff-sans: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+            --ff-serif: 'Playfair Display', serif;
+        }
+
+        * {
+            box-sizing: border-box
+        }
+
+        html,
+        body {
+            height: 100%;
+            margin: 0;
+            background: linear-gradient(180deg, #030306 0%, #071017 60%);
+            color: #fff;
+            font-family: var(--ff-sans);
+            -webkit-font-smoothing: antialiased
+        }
+
+        a {
+            color: inherit
+        }
+
+        img {
+            max-width: 100%;
+            display: block
+        }
+
+        /* Layout */
+        .wrap {
+            max-width: var(--maxw);
+            margin: 0 auto;
+            padding: 36px
+        }
+
+        header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 20px;
+            padding: 18px 0;
+            position: sticky;
+            top: 12px;
+            z-index: 40
+        }
+
+        /* Brand */
+        .brand {
+            display: flex;
+            align-items: center;
+            gap: 14px
+        }
+
+        .logo {
+            width: 56px;
+            height: 56px;
+            border-radius: 12px;
+            background: linear-gradient(135deg, var(--accent), var(--accent-2));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: var(--ff-serif);
+            font-weight: 900;
+            color: #07060a;
+            font-size: 20px;
+            box-shadow: 0 8px 30px rgba(12, 10, 12, 0.6)
+        }
+
+        .brand-title {
+            line-height: 1
+        }
+
+        .brand-title h1 {
+            margin: 0;
+            font-family: var(--ff-serif);
+            font-size: 18px;
+            letter-spacing: 0.2px
+        }
+
+        .brand-title p {
+            margin: 2px 0 0;
+            color: var(--muted);
+            font-size: 13px
+        }
+
+        /* Nav */
+        nav {
+            display: flex;
+            gap: 12px;
+            align-items: center
+        }
+
+        .nav-link {
+            font-weight: 600;
+            color: var(--muted);
+            padding: 8px 12px;
+            border-radius: 999px;
+            text-decoration: none;
+            font-size: 14px;
+            transition: all .22s
+        }
+
+        .nav-link.primary {
+            background: linear-gradient(90deg, var(--accent), #ffd87d);
+            color: #08080a
+        }
+
+        .nav-link:hover {
+            transform: translateY(-3px);
+            color: #fff
+        }
+
+        /* HERO */
+        .hero {
+            display: grid;
+            grid-template-columns: 1fr 420px;
+            gap: 40px;
+            align-items: center;
+            min-height: 76vh;
+            padding-top: 24px
+        }
+
+        .hero-left {
+            padding: 24px
+        }
+
+        .eyebrow {
+            color: var(--muted);
+            font-weight: 600;
+            letter-spacing: 1px;
+            margin-bottom: 10px
+        }
+
+        .hero-title {
+            font-family: var(--ff-serif);
+            font-size: 48px;
+            line-height: 1;
+            margin: 0 0 12px
+        }
+
+        .hero-sub {
+            color: var(--muted);
+            max-width: 620px;
+            margin-bottom: 20px
+        }
+
+        .actions {
+            display: flex;
+            gap: 12px
+        }
+
+        /* Right hero — stacked cards */
+        .hero-side {
+            display: grid;
+            gap: 12px
+        }
+
+        .card {
+            background: linear-gradient(180deg, var(--glass), rgba(255, 255, 255, 0.01));
+            border-radius: 12px;
+            padding: 14px;
+            backdrop-filter: blur(6px);
+            box-shadow: 0 10px 40px rgba(2, 6, 15, 0.6)
+        }
+
+        .profile-mini {
+            display: flex;
+            gap: 12px;
+            align-items: center
+        }
+
+        .profile-mini img {
+            width: 86px;
+            height: 86px;
+            object-fit: cover;
+            border-radius: 10px;
+            border: 1px solid rgba(255, 255, 255, 0.04)
+        }
+
+        .profile-mini h3 {
+            margin: 0;
+            font-size: 18px;
+            font-weight: 700
+        }
+
+        .profile-mini p {
+            margin: 6px 0 0;
+            color: var(--muted);
+            font-size: 13px
+        }
+
+        /* Features row */
+        .features {
+            display: flex;
+            gap: 12px;
+            flex-wrap: wrap;
+            margin-top: 14px
+        }
+
+        .feature {
+            flex: 1 1 120px;
+            padding: 10px;
+            border-radius: 10px;
+            background: rgba(255, 255, 255, 0.02);
+            text-align: center
+        }
+
+        .feature h4 {
+            margin: 0;
+            font-size: 18px
+        }
+
+        .feature p {
+            margin: 6px 0 0;
+            color: var(--muted);
+            font-size: 13px
+        }
+
+        /* Sections */
+        section {
+            padding: 80px 0
+        }
+
+        .section-head {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            margin-bottom: 26px
+        }
+
+        .line {
+            height: 2px;
+            width: 56px;
+            background: linear-gradient(90deg, var(--accent), var(--accent-2));
+            border-radius: 3px
+        }
+
+        h2.section-title {
+            font-family: var(--ff-serif);
+            margin: 0;
+            font-size: 28px
+        }
+
+        /* Gallery grid */
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 12px
+        }
+
+        .gallery .tile {
+            position: relative;
+            border-radius: 10px;
+            overflow: hidden;
+            cursor: pointer
+        }
+
+        .gallery .tile img {
+            width: 100%;
+            height: 360px;
+            object-fit: cover;
+            transition: transform .6s cubic-bezier(.2, .9, .2, 1)
+        }
+
+        .gallery .tile:hover img {
+            transform: scale(1.08)
+        }
+
+        .gallery .tile .badge {
+            position: absolute;
+            left: 12px;
+            bottom: 12px;
+            background: linear-gradient(90deg, var(--accent), var(--accent-2));
+            padding: 8px 12px;
+            border-radius: 999px;
+            font-weight: 700;
+            color: #07060a
+        }
+
+        /* Cards grid for featured */
+        .cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 20px
+        }
+
+        .model-card {
+            background: linear-gradient(180deg, rgba(255, 255, 255, 0.02), transparent);
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 12px 40px rgba(2, 6, 15, 0.6);
+            transition: transform .3s
+        }
+
+        .model-card:hover {
+            transform: translateY(-10px)
+        }
+
+        .model-card img {
+            height: 320px;
+            object-fit: cover
+        }
+
+        .model-card .body {
+            padding: 14px
+        }
+
+        .model-card .name {
+            font-weight: 700;
+            margin-bottom: 6px
+        }
+
+        .model-card .meta {
+            color: var(--muted);
+            font-size: 13px
+        }
+
+        /* Contact */
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 360px;
+            gap: 18px
+        }
+
+        .contact-panel {
+            padding: 18px;
+            border-radius: 12px;
+            background: linear-gradient(180deg, rgba(255, 255, 255, 0.02), transparent)
+        }
+
+        label {
+            display: block;
+            font-size: 13px;
+            color: var(--muted);
+            margin-bottom: 6px
+        }
+
+        input,
+        textarea {
+            width: 100%;
+            padding: 12px;
+            border-radius: 10px;
+            border: 1px solid rgba(255, 255, 255, 0.04);
+            background: transparent;
+            color: #fff
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 12px 16px;
+            border-radius: 10px;
+            background: linear-gradient(90deg, var(--accent), #ffd87d);
+            color: #07060a;
+            font-weight: 800;
+            border: none;
+            cursor: pointer
+        }
+
+        /* Footer */
+        footer {
+            padding: 28px 0;
+            text-align: center;
+            color: var(--muted);
+            font-size: 13px
+        }
+
+        /* Lightbox */
+        .lightbox {
+            position: fixed;
+            inset: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: rgba(2, 6, 12, 0.9);
+            z-index: 1200;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity .22s
+        }
+
+        .lightbox.open {
+            opacity: 1;
+            pointer-events: auto
+        }
+
+        .lightbox img {
+            max-width: 94%;
+            max-height: 86%;
+            border-radius: 8px
+        }
+
+        /* Responsive */
+        @media (max-width:1024px) {
+            .hero {
+                grid-template-columns: 1fr 360px
+            }
+
+            .gallery .tile img {
+                height: 300px
+            }
+        }
+
+        @media (max-width:760px) {
+            .hero {
+                grid-template-columns: 1fr;
+                gap: 18px
+            }
+
+            .gallery {
+                grid-template-columns: repeat(2, 1fr)
+            }
+
+            .contact-grid {
+                grid-template-columns: 1fr
+            }
+
+            .wrap {
+                padding: 20px
+            }
+        }
+
+        /* small animations */
+        .fade-up {
+            opacity: 0;
+            transform: translateY(16px);
+            transition: all .6s cubic-bezier(.2, .9, .2, 1)
+        }
+
+        .show {
+            opacity: 1;
+            transform: none
+        }
+    </style>
+</head>
+
+<body>
+    <div class="wrap">
+        <header>
+            <div class="brand">
+                <div class="logo">KA</div>
+                <div class="brand-title">
+                    <h1>Kamran Ali</h1>
+                    <p>Model • Commercial • Runway</p>
+                </div>
+            </div>
+
+            <nav>
+                <a class="nav-link" href="#home">Home</a>
+                <a class="nav-link" href="#work">Work</a>
+                <a class="nav-link" href="#gallery">Gallery</a>
+                <a class="nav-link" href="#contact">Contact</a>
+                <a class="nav-link primary" href="mailto:kamranalibusiness1214@gmail.com">Book Now</a>
+            </nav>
+        </header>
+
+        <!-- HERO -->
+        <main id="home" class="hero">
+            <div class="hero-left">
+                <div class="eyebrow">Featured — 2025</div>
+                <h1 class="hero-title">Refined. Bold. Camera-Ready.</h1>
+                <p class="hero-sub">Editorial portraits, runway-ready silhouettes and commercial versatility. Available
+                    for campaigns, lookbooks and international bookings. Replace the sample images with your own
+                    high-resolution photos.</p>
+                <div class="actions">
+                    <a class="nav-link primary" href="#contact">Hire Me</a>
+                    <a class="nav-link" href="#gallery">View Gallery</a>
+                </div>
+
+                <div style="margin-top:26px;display:flex;gap:14px;align-items:center">
+                    <div class="card profile-mini">
+                        <img src="./1.png" alt="Kamran profile">
+                        <div>
+                            <h3>Kamran Ali</h3>
+                            <p>Height: 5'9" • Eyes: Brown • Based: Pakistan</p>
+                        </div>
+                    </div>
+
+                    <div style="color:var(--muted);font-size:14px">Availability: International<br>Representation:
+                        Independent</div>
+                </div>
+
+                <div class="features" style="margin-top:18px">
+                    <div class="feature">
+                        <h4>Editorial</h4>
+                        <p>Magazine-style portraits</p>
+                    </div>
+                    <div class="feature">
+                        <h4>Runway</h4>
+                        <p>Show experience & grooming</p>
+                    </div>
+                    <div class="feature">
+                        <h4>Commercial</h4>
+                        <p>Catalog & e-commerce</p>
+                    </div>
+                </div>
+            </div>
+
+            <aside class="hero-side">
+                <div class="card">
+                    <picture>
+                        <img src="./gh.png" alt="hero look 1"
+                            style="width:100%;height:540px;object-fit:cover;border-radius:8px">
+                    </picture>
+                </div>
+            </aside>
+        </main>
+
+        <!-- WORK / Featured Looks -->
+        <section id="work">
+            <div class="section-head">
+                <div class="line"></div>
+                <h2 class="section-title">Featured Looks</h2>
+            </div>
+
+            <div class="cards" id="featured">
+                <article class="model-card fade-up">
+                    <img src="./G1.png" alt="look 1">
+                    <div class="body">
+                        <div class="name">Kamran Ali</div>
+                        <div class="meta">Editorial • Runway • Commercial</div>
+                    </div>
+                </article>
+
+                <article class="model-card fade-up">
+                    <img src="./G2.png" alt="look 2">
+                    <div class="body">
+                        <div class="name"> Casual Line </div>
+                        <div class="meta"> Street • Casual</div>
+                    </div>
+                </article>
+
+                <article class="model-card fade-up">
+                    <img src="./1.png" alt="look 3">
+                    <div class="body">
+                        <div class="name"> Studio Fashion </div>
+                        <div class="meta"> Lookbook • Lifestyle </div>
+                    </div>
+                </article>
+
+                <article class="model-card fade-up">
+                    <img src="./0.2.jpg" alt="look 4">
+                    <div class="body">
+                        <div class="name">Classic Silhouette</div>
+                        <div class="meta">Suit • Formal</div>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <!-- GALLERY -->
+        <section id="gallery">
+            <div class="section-head">
+                <div class="line"></div>
+                <h2 class="section-title">Gallery</h2>
+            </div>
+
+            <div class="gallery" id="gallery-grid">
+                <div class="tile fade-up" data-label="Editorial"><img loading="lazy" src="./gh.png" alt="g1">
+                    <div class="badge">Editorial</div>
+                </div>
+                <div class="tile fade-up" data-label="Runway"><img loading="lazy" src="./G1.png" alt="g2">
+                    <div class="badge">Runway</div>
+                </div>
+                <div class="tile fade-up" data-label="Lifestyle"><img loading="lazy" src="./G3.png" alt="g3">
+                    <div class="badge">Lifestyle</div>
+                </div>
+                <div class="tile fade-up" data-label="Commercial"><img loading="lazy" src="./0.2.jpg" alt="g4">
+                    <div class="badge">Commercial</div>
+                </div>
+                <div class="tile fade-up" data-label="Lookbook"><img loading="lazy" src="./10.jpg" alt="g5">
+                    <div class="badge">Lookbook</div>
+                </div>
+                <div class="tile fade-up" data-label="Street"><img loading="lazy" src="./3.JPG" alt="g6">
+                    <div class="badge">Street</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CONTACT -->
+        <section id="contact">
+            <div class="section-head">
+                <div class="line"></div>
+                <h2 class="section-title">Contact</h2>
+            </div>
+
+            <div class="contact-grid">
+                <div class="contact-panel fade-up">
+                    <h3 style="margin-top:0;font-family:var(--ff-serif)">Book For Campaigns & Castings</h3>
+                    <p style="color:var(--muted)">For bookings, collaborations or agency inquiries — please include
+                        project brief, dates and budget for a faster response.</p>
+
+                    <p style="margin:12px 0 4px;color:var(--muted)"><strong>Email:</strong> <a
+                            href="mailto:kamranalibusiness1214@gmail.com"
+                            style="color:var(--accent)">kamranalibusiness1214@gmail.com</a></p>
+                    <p style="margin:6px 0;color:var(--muted)"><strong>WhatsApp:</strong> <a
+                            href="https://wa.me/923470712752" style="color:var(--accent)">+92 347 0712752</a></p>
+
+                    <div style="margin-top:14px;display:flex;gap:12px">
+                        <a class="btn" href="mailto:kamranalibusiness1214@gmail.com">Email Now</a>
+                        <a class="btn" href="./Kamran_Ali_CV.pdf"
+                            style="background:transparent;border:1px solid rgba(255,255,255,0.06);color:var(--muted);">Download
+                            CV</a>
+                    </div>
+                </div>
+
+                <form class="contact-panel fade-up" action="https://formspree.io/f/mblkkedo" method="POST">
+                    <div style="display:grid;gap:10px">
+                        <label for="name">Name</label>
+                        <input id="name" name="name" placeholder="Your name" required>
+
+                        <label for="email">Email</label>
+                        <input id="email" type="email" name="email" placeholder="you@example.com" required>
+
+                        <label for="message">Message</label>
+                        <textarea id="message" name="message" rows="5" placeholder="Project brief, dates, budget..."
+                            required></textarea>
+
+                        <div style="text-align:right"><button class="btn" type="submit">Send Request</button></div>
+                    </div>
+                </form>
+            </div>
+        </section>
+
+        <footer>
+            &copy; <span id="year"></span> Kamran Ali • All rights reserved
+        </footer>
+    </div>
+
+    <!-- LIGHTBOX -->
+    <div id="lightbox" class="lightbox" aria-hidden="true"><img id="lb" src="" alt=""></div>
+
+    <script>
+        // year
+        document.getElementById('year').textContent = new Date().getFullYear();
+
+        // reveal on scroll
+        const items = document.querySelectorAll('.fade-up');
+        const io = new IntersectionObserver((entries) => { entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('show') }) }, { threshold: 0.18 });
+        items.forEach(i => io.observe(i));
+
+        // Lightbox
+        const lightbox = document.getElementById('lightbox');
+        const lb = document.getElementById('lb');
+        document.querySelectorAll('.gallery .tile img, .model-card img').forEach(img => {
+            img.addEventListener('click', (e) => { lb.src = img.src.replace(/\.[a-zA-Z]{3,4}$/, match => match); lightbox.classList.add('open'); document.body.style.overflow = 'hidden'; });
+        });
+        lightbox.addEventListener('click', (e) => { if (e.target === lightbox) { lightbox.classList.remove('open'); lb.src = ''; document.body.style.overflow = 'auto'; } });
+        document.addEventListener('keydown', (e) => { if (e.key === 'Escape') { lightbox.classList.remove('open'); lb.src = ''; document.body.style.overflow = 'auto'; } });
+
+        // smooth nav
+        document.querySelectorAll('nav a').forEach(a => a.addEventListener('click', (ev) => { const id = a.getAttribute('href'); if (id && id.startsWith('#')) { ev.preventDefault(); const el = document.querySelector(id); if (el) el.scrollIntoView({ behavior: 'smooth' }); } }));
+
+        // NOTE: Replace placeholder images (./*.jpg) and update contact links/CV file.
+    </script>
+</body>
+
+</html>

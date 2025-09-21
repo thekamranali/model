@@ -24,6 +24,78 @@
             --maxw: 1200px;
             --ff-sans: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
             --ff-serif: 'Playfair Display', serif;
+            /* Responsive */
+@media (max-width:1024px) {
+  .hero {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+  .hero-side img {
+    height: 420px !important;
+  }
+  .gallery .tile img {
+    height: 280px;
+  }
+}
+
+@media (max-width:760px) {
+  header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+  }
+  nav {
+    flex-wrap: wrap;
+    gap: 6px;
+  }
+  .hero {
+    grid-template-columns: 1fr;
+    text-align: center;
+    padding-top: 12px;
+  }
+  .hero-left {
+    padding: 0;
+  }
+  .hero-title {
+    font-size: 32px;
+  }
+  .hero-sub {
+    font-size: 14px;
+  }
+  .actions {
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+  .gallery {
+    grid-template-columns: 1fr 1fr;
+  }
+  .gallery .tile img {
+    height: 220px;
+  }
+  .contact-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width:480px) {
+  .hero-title {
+    font-size: 26px;
+  }
+  .gallery {
+    grid-template-columns: 1fr;
+  }
+  .gallery .tile img {
+    height: 200px;
+  }
+  .wrap {
+    padding: 14px;
+  }
+  nav a {
+    font-size: 12px;
+    padding: 6px 10px;
+  }
+}
+
         }
 
         * {
@@ -676,5 +748,6 @@
         // NOTE: Replace placeholder images (./*.jpg) and update contact links/CV file.
     </script>
 </body>
+
 
 </html>
